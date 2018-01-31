@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,63 +55,6 @@
             <div id="dragSize" data-flag="resize"></div>
         </div>
     </div>
-    <!-- <script>
-
-        target = document.body;     // c元素
-        var sX = 0, sY = 0, tempEle = null;
-
-        var disX = 0;//鼠标按下时光标的X值  
-        var disY = 0;//鼠标按下时光标的Y值  
-        var disW = 0; //拖拽前div的宽  
-        var disH = 0; // 拖拽前div的高  
-        target.addEventListener("mousedown", dragsize.bind(this));
-        //3. 给小div加点击事件  
-        function dragsize(ev) {
-            var ev = ev || window.event;
-            console.log(ev.target.dataset.flag, 455);
-            if (ev.target.dataset.flag != 'resize') return;
-            ev.preventDefault();
-            ev.cancelBubble = true;
-            ev.stopPropagation();
-            var oPanel = ev.target.parentNode;
-            console.log(oPanel.offsetHeight, oPanel, 'oPanel');
-            disX = ev.clientX; // 获取鼠标按下时光标x的值  
-            disY = ev.clientY; // 获取鼠标按下时光标Y的值  
-            disW = oPanel.offsetWidth; // 获取拖拽前div的宽  
-            disH = oPanel.offsetHeight; // 获取拖拽前div的高  
-            document.body.onmousemove = function (ev) {
-                var ev = ev || window.event;
-                //拖拽时为了对宽和高 限制一下范围，定义两个变量  
-                var W = ev.clientX - disX + disW;
-                var H = ev.clientY - disY + disH;
-                oPanel.style.width = W + 'px';// 拖拽后物体的宽  
-                oPanel.style.height = H + 'px';// 拖拽后物体的高  
-            }
-            document.body.onmouseup = document.body.onmouseleave = () => {
-                document.body.onmousemove = null;
-                document.body.onmouseup = null;
-                document.body.onmouseleave = null;
-            }
-        }
-
-        target.addEventListener('dragstart', (ev) => {   // dragstart事件由a元素产生
-            console.log(ev, ev.target.offsetLeft);
-            var e = ev || window.event;
-            tempEle = ev.target;
-            sX = (e.pageX || e.clientX) - parseInt(tempEle.offsetLeft, 10)
-            sY = (e.pageY || e.clientY) - parseInt(tempEle.offsetTop, 10);
-            ev.dataTransfer.effectAllowed = "move";
-        }, false)
-        target.addEventListener('drop', (e) => {
-            with (tempEle.style) {
-                left = (e.pageX || e.clientX) - sX + "px";
-                top = (e.pageY || e.clientY) - sY + "px";
-            }
-            e.preventDefault();
-        }, false)
-        document.ondragover = (e) => { e.dataTransfer.dropEffeet = "move"; e.preventDefault(); }
-        //尺寸大小逻辑改 
-    </script> -->
 </body>
 <script src='./ds.js'></script>
 </html>
